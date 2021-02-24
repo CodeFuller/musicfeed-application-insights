@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <CurrentVersion>1.0.0</CurrentVersion>
+    <VersionPrefix>$(CurrentVersion)</VersionPrefix>
+    <!-- VersionSuffix is set to "preview" by CI server for non-default branches -->
+    <VersionSuffix></VersionSuffix>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>CodeFuller.MusicFeed.ApplicationInsights</PackageId>
+    <Description>Infrastructure for integration with Application Insights in MusicFeed project.</Description>
+    <PackageTags>CodeFuller MusicFeed Application Insights</PackageTags>
+    <Authors>CodeFuller</Authors>
+    <Company>CodeFuller</Company>
+    <Copyright>Copyright © 2021 CodeFuller</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon>nuget-icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/CodeFuller/musicfeed-application-insights</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <CodeAnalysisRuleSet>../../CodeFuller.MusicFeed.ApplicationInsights.src.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.16.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.Kubernetes" Version="1.1.4" />
+    <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="3.1.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../img/nuget-icon.png" Pack="true" PackagePath="" />
+    <None Include="../../LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>
