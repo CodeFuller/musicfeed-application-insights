@@ -21,7 +21,7 @@ namespace CodeFuller.MusicFeed.ApplicationInsights
 			// https://stackoverflow.com/questions/64869536/
 			// https://github.com/serilog/serilog-aspnetcore/issues/84
 			return base.Convert(logEvent, formatProvider)
-				.Select(x => x.Enrich(Settings));
+				.Select(telemetry => Settings != null ? telemetry.Enrich(Settings) : telemetry);
 		}
 	}
 }

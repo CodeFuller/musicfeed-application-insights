@@ -18,6 +18,9 @@ namespace CodeFuller.MusicFeed.ApplicationInsights
 		/// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
 		public static IServiceCollection AddApplicationInsights(this IServiceCollection services, Action<ApplicationInsightsSettings> setupSettings)
 		{
+			CustomTraceTelemetryConverter.Settings = new ApplicationInsightsSettings();
+			setupSettings(CustomTraceTelemetryConverter.Settings);
+
 			services.Configure<ApplicationInsightsSettings>(setupSettings);
 
 			services.AddApplicationInsightsTelemetry();
